@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/layoutPadding"
+    android:paddingRight="@dimen/layoutPadding" >
+
+    <include
+        android:id="@+id/integral"
+        layout="@layout/item" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:clipToPadding="false"
+        android:divider="@color/divide"
+        android:dividerHeight="0dip"
+        android:fadingEdge="none"
+        android:scrollbars="none" />
+
+</LinearLayout>

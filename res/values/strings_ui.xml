@@ -1,0 +1,57 @@
+<resources>
+
+    <string name="add">添\n加\n账\n号</string>
+    <string name="setting">程\n序\n设\n置</string>
+    <string name="auto">自\n动\n签\n到</string>
+    <string name="about">关于&amp;更新&amp;反馈</string>
+
+    <!--  -->
+    <string name="appbg">背景</string>
+    <string name="appbgkey">设置背景类型</string>
+    <string name="appbgvalue1">壁纸</string>
+    <string name="appbgvalue2">默认</string>
+    <string name="appbgvalue3">纯白</string>
+    <string name="appbgvalue4">纯黑</string>
+    <string name="appbgvalue5">个性</string>
+    <string name="other">其他</string>
+    <string name="islogkey">显示签到日志</string>
+    <string name="setPaperFailTip">选择图片出错,可能由于图片文件不正确或者文件太大,请换一张图片试试!</string>
+
+    <!--  -->
+    <string name="vomitSlot">看作者吐槽</string>
+    <string name="vomitSlotContent">作者已无力吐槽</string>
+    <string name="aboutTag">关于</string>
+    <string name="statement">声明</string>
+    <string name="author">制作者</string>
+    <string name="ps">P.S.</string>
+    <string name="iVersion">v </string>
+    <string name="iAppName">签到\n助手</string>
+    <string name="iStatement">此应用非官方应用\n由个人开发者开发</string>
+    <string name="iAuthor">Cayte.Xu</string>
+    <string name="iUpdate">检查新版本</string>
+    <string name="iFeedback">和作者聊天</string>
+
+    <!--  -->
+    <string name="updateStart">正在检查更新...</string>
+    <string name="updateNotUp">您正在使用最新版本,无需更新</string>
+    <string name="updateNoWifi">无wifi连接,只在wifi下进行更新</string>
+    <string name="updateTimeOut">连接超时,请稍后再试</string>
+
+    <!--  -->
+    <string name="integral">积分</string>
+    <string name="instructions">说明</string>
+    <string name="getIntegral">获得积分</string>
+    <string name="integralWall">积分墙</string>
+    <string name="payIntegral">使用积分</string>
+    <string name="removeAd">去除签到广告</string>
+    <string name="autoCheck">设置自动签到</string>
+    <string name="pointsless">积分不足,无法支持此消费</string>
+
+    <!--  -->
+    <string name="removeAdTip">开启需消费200积分,开启后可以去除签到时弹出的广告.确定开启吗?</string>
+    <string name="autoCheckTip">每500积分可为一个账号开启自动签到功能,使用自动签到时请务必保证正确的系统时间,和信任此程序或加入您安全防护的白名单.</string>
+    <string name="autoCheckAccTip1">消费500积分开启自动签到</string>
+    <string name="autoCheckAccTip2">关闭后重新开启无需消费积分</string>
+    <string name="autoCheckAccTip3">无需积分重新开启自动签到</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="act_bg">#ffffffff</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="light_black">#ffbbbbbb</color>
+    <color name="dark">#ff878787</color>
+    <color name="light">#ffbbbbbb</color>
+    <color name="divide">#00ffffff</color>
+
+</resources>

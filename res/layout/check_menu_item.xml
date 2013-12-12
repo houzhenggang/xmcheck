@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_bg"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/itemHeightx1"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/layoutPadding"
+    android:paddingRight="@dimen/layoutPadding" >
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/Text"
+        android:layout_width="fill_parent"
+        android:singleLine="true"
+        android:textSize="26sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/last"
+            style="@style/Text"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/day"
+            style="@style/Text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tian"
+            style="@style/Text"
+            android:padding="5sp"
+            android:text="@string/itemTian"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

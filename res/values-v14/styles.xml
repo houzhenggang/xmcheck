@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- <item name=""></item> -->
+
+    <style name="Widget" parent="android:Widget"></style>
+
+    <style name="ThemeApplication" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"></style>
+
+    <style name="ThemeActivity" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@color/act_bg</item>
+    </style>
+
+</resources>

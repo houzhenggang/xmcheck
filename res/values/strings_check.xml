@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <!-- value -->
+    <string name="vXmUrl">http://www.xiami.com/</string>
+    <string name="vXmLoginUrl">http://www.xiami.com/member/login</string>
+    <string name="vXmCheckUrl">http://www.xiami.com/task/signin</string>
+    <string name="vSubmit">登 录</string>
+    <string name="vCheckin">签到</string>
+    <string name="vNotFoundEmail">email 不存在</string>
+    <string name="vPassWordWrong">Email 或者密码错误</string>
+    <string name="vValidateWrong">验证码错误</string>
+    <string name="vNotValidate">请输入验证码</string>
+    <string name="vDay">天</string>
+    <!-- tip -->
+    <string name="tUnknownFail">网络连接出错啦!</string>
+    <string name="tNetFail">网络连接失败,请检查网络设置!</string>
+    <string name="tServerFail">服务器访问失败,请确认网络设置!</string>
+    <string name="tLoginFail">登录失败,请检查登录名和密码!</string>
+    <string name="tLoginValidateFail">登录失败,无法解析验证码,请过一段时间再试!</string>
+    <string name="tCheckFail">签到失败!</string>
+    <!-- log -->
+    <string name="logStart">-------------start-------------</string>
+    <string name="logName">账号:</string>
+    <string name="logOpen">正在打开虾米音乐网...</string>
+    <string name="logLogining">正在登录...</string>
+    <string name="logLoginSuccess">登录成功!</string>
+    <string name="logCheckined">已签到!</string>
+    <string name="logChecking">正在签到...</string>
+    <string name="logCheckinSuccess">签到成功!</string>
+    <string name="logCheckinFail">签到失败!</string>
+    <string name="logTime">时间:</string>
+    <string name="logEnd">-------------end-------------</string>
+
+</resources>

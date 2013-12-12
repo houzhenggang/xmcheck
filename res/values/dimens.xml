@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="itemHeightx1">100dip</dimen>
+    <dimen name="itemHeightx2">200dip</dimen>
+    <dimen name="itemTextSize">26sp</dimen>
+    <dimen name="layoutPadding">30dip</dimen>
+
+</resources>

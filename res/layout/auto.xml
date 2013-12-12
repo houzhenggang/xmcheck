@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/layoutPadding"
+        android:paddingRight="@dimen/layoutPadding" >
+
+        <include
+            android:id="@+id/integral"
+            layout="@layout/item" />
+
+        <TextView
+            style="@style/TextTag"
+            android:text="@string/getIntegral" />
+
+        <include
+            android:id="@+id/integralWall"
+            layout="@layout/item" />
+
+        <TextView
+            style="@style/TextTag"
+            android:text="@string/payIntegral" />
+
+        <include
+            android:id="@+id/removeAd"
+            layout="@layout/item" />
+
+        <include
+            android:id="@+id/autoCheck"
+            layout="@layout/item" />
+    </LinearLayout>
+
+</ScrollView>

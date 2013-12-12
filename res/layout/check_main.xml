@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|right"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/dayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:singleLine="true"
+            android:text="@string/everydayCheckin"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/dayTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/_null"
+            android:textSize="16sp" />
+
+        <FrameLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="218dip"
+            android:layout_height="10dip"
+            android:layout_marginTop="5dip" >
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/dayDetailScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="140dip"
+            android:layout_marginTop="5dip"
+            android:scrollbars="none" >
+
+            <TextView
+                android:id="@+id/dayDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/_null"
+                android:textSize="14sp" />
+        </ScrollView>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/layoutTransparent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</FrameLayout>
