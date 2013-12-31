@@ -2,17 +2,6 @@
 
     <string name="today">今天</string>
     <string name="yesterday">昨天</string>
-    <!-- value -->
-    <string name="vXmUrl">http://www.xiami.com/</string>
-    <string name="vXmLoginUrl">http://www.xiami.com/member/login</string>
-    <string name="vXmCheckUrl">http://www.xiami.com/task/signin</string>
-    <string name="vSubmit">登 录</string>
-    <string name="vCheckin">签到</string>
-    <string name="vNotFoundEmail">email 不存在</string>
-    <string name="vPassWordWrong">Email 或者密码错误</string>
-    <string name="vValidateWrong">验证码错误</string>
-    <string name="vNotValidate">请输入验证码</string>
-    <string name="vDay">天</string>
     <!-- tip -->
     <string name="tUnknownFail">网络连接出错啦!</string>
     <string name="tNetFail">网络连接失败,请检查网络设置!</string>

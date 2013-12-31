@@ -34,8 +34,6 @@ public class CheckinHandler {
 
 	private Context context = null;
 
-	private String V_SUBMIT, V_CHECKIN, V_NAME_WRONG, V_PASS_WRONG,
-			V_VALIDATE_WRONG, V_DAY, V_HOST, V_LOGIN_URL, V_CHECKIN_URL;
 	private String T_UNKNOWN_FAIL, T_NET_FAIL, T_SERVER_FAIL, T_LOGIN_FAIL,
 			T_LOGIN_VALIDATE_FAIL, T_CHECK_FAIL;
 
@@ -58,16 +56,6 @@ public class CheckinHandler {
 	public CheckinHandler(Context context) {
 		// TODO Auto-generated constructor stub
 		this.context = context;
-		V_SUBMIT = context.getString(R.string.vSubmit);
-		V_CHECKIN = context.getString(R.string.vCheckin);
-		V_NAME_WRONG = context.getString(R.string.vNotFoundEmail);
-		V_PASS_WRONG = context.getString(R.string.vPassWordWrong);
-		V_VALIDATE_WRONG = context.getString(R.string.vValidateWrong);
-		V_HOST = context.getString(R.string.vXmUrl);
-		V_LOGIN_URL = context.getString(R.string.vXmLoginUrl);
-		V_CHECKIN_URL = context.getString(R.string.vXmCheckUrl);
-		V_DAY = context.getString(R.string.vDay);
-		//
 		T_UNKNOWN_FAIL = context.getString(R.string.tUnknownFail);
 		T_NET_FAIL = context.getString(R.string.tNetFail);
 		T_SERVER_FAIL = context.getString(R.string.tServerFail);
@@ -187,39 +175,32 @@ public class CheckinHandler {
 		}
 		ArrayList<BasicNameValuePair> valueList = new ArrayList<BasicNameValuePair>();
 		BasicNameValuePair value = null;
-		value = new BasicNameValuePair("done", V_HOST);
-		valueList.add(value);
 		value = new BasicNameValuePair("email", acc.name);
 		valueList.add(value);
 		value = new BasicNameValuePair("password", acc.pass);
 		valueList.add(value);
-		value = new BasicNameValuePair("autologin", "1");
-		valueList.add(value);
-		value = new BasicNameValuePair("submit", V_SUBMIT);
+		value = new BasicNameValuePair("LoginButton", "登录");
 		valueList.add(value);
 
 		try {
 			UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(
 					valueList, "UTF-8");
-			HttpPost post = new HttpPost(V_LOGIN_URL);
-			post.setHeader("Referer", V_HOST);
+			HttpPost post = new HttpPost("http://www.xiami.com/web/login");
+			post.setHeader("Referer", "http://www.xiami.com/web/login");
 			post.setEntity(urlEncodedFormEntity);
 			HttpResponse response = client.execute(post);
 
 			if (response.getStatusLine().getStatusCode() == 200) {
 				String res = EntityUtils
 						.toString(response.getEntity(), "UTF-8");
-				if (res.contains(V_CHECKIN)) {
-					acc = isCheck(acc, res);
+				if (res.contains("会员登录")) {
+					acc.state = LOGIN_FAIL;
+				} else if (res.contains("快捷操作")) {
+					acc = isCheck(acc);
 					if (acc.day > 0)
 						acc.state = IS_CHECKED;
 					else
 						acc.state = SUCCESS;
-				} else if (res.contains(V_NAME_WRONG)
-						|| res.contains(V_PASS_WRONG)) {
-					acc.state = LOGIN_FAIL;
-				} else if (res.contains(V_VALIDATE_WRONG)) {
-					acc.state = LOGIN_VALIDATE_FAIL;
 				} else {
 					acc.state = SERVER_FAIL;
 				}
@@ -250,8 +231,8 @@ public class CheckinHandler {
 		try {
 			UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(
 					valueList, "UTF-8");
-			HttpPost post = new HttpPost(V_CHECKIN_URL);
-			post.setHeader("Referer", V_HOST);
+			HttpPost post = new HttpPost("http://www.xiami.com/task/signin");
+			post.setHeader("Referer", "http://www.xiami.com/");
 			post.setEntity(urlEncodedFormEntity);
 			HttpResponse response = client.execute(post);
 			if (response.getStatusLine().getStatusCode() == 200) {
@@ -280,15 +261,12 @@ public class CheckinHandler {
 	private AccountInfo isCheck(AccountInfo acc) {
 		// TODO Auto-generated method stub
 		try {
-			HttpGet get = new HttpGet(V_HOST);
-			HttpResponse response = client.execute(get);
-			if (response.getStatusLine().getStatusCode() == 200) {
-				String res = EntityUtils
-						.toString(response.getEntity(), "UTF-8");
+			HttpGet get = new HttpGet("http://www.xiami.com/web?1");
+			HttpResponse resp = client.execute(get);
+			if (resp.getStatusLine().getStatusCode() == 200) {
+				String res = EntityUtils.toString(resp.getEntity(), "UTF-8");
 				printLongString(res);
-
 				acc = isCheck(acc, res);
-
 			}
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
@@ -304,22 +282,30 @@ public class CheckinHandler {
 		// TODO Auto-generated method stub
 		int days = 0;
 		//
-		String integral = "";
-		String level = "";
-		String dayNum = "";
-		/** get check days */
-		String str = Regular.get(html, "sidebar", "checkin_popup");
-		integral = Regular.get(Regular.get(str, "help9_2", "</a>"), "<strong>",
-				"</strong>");
-		level = Regular.get(str, "level_popup\">", "<p>");
-		dayNum = Regular.get(str, "done\">", "</b>");
-		if (dayNum.contains(V_DAY))
-			days = Integer.parseInt(dayNum.replace(V_DAY, "").trim());
-		acc.integral = integral;
-		acc.level = level;
-		acc.day = days;
-		acc.tip = integral + "-" + level + "-" + dayNum;
-
+		// String integral = "";
+		// String level = "";
+		// String dayNum = "";
+		// /** get check days */
+		// String str = Regular.get(html, "sidebar", "checkin_popup");
+		// integral = Regular.get(Regular.get(str, "help9_2", "</a>"),
+		// "<strong>",
+		// "</strong>");
+		// level = Regular.get(str, "level_popup\">", "<p>");
+		// dayNum = Regular.get(str, "done\">", "</b>");
+		// if (dayNum.contains(V_DAY))
+		// days = Integer.parseInt(dayNum.replace(V_DAY, "").trim());
+		// acc.integral = integral;
+		// acc.level = level;
+		// acc.day = days;
+		// acc.tip = integral + "-" + level + "-" + dayNum;
+		//
+		if (html.contains("每日签到")) {
+			acc.day = 0;
+		} else {
+			String dayNum = Regular.get(html, "已连续签到", "天");
+			days = Integer.parseInt(dayNum.trim());
+			acc.day = days;
+		}
 		return acc;
 	}
 

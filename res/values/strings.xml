@@ -30,7 +30,7 @@
     <string name="delete">删除</string>
     <string name="checkFail">签到失败!错误提示:</string>
     <string name="errorTip">程序出错,即将退出.</string>
-    <string name="showTip">账号:%1$s\n积分:%2$s\n等级:%3$s\n连续签到%4$s天\n自动签到:%5$s</string>
+    <string name="showTip">账号:%1$s\n已连续签到%4$s天\n自动签到:%5$s</string>
     <string name="isOpen">已开启</string>
     <string name="unOpen">未开启</string>
 
