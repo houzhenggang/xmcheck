@@ -61,6 +61,7 @@ public class CheckinHandler {
 		T_SERVER_FAIL = context.getString(R.string.tServerFail);
 		T_LOGIN_FAIL = context.getString(R.string.tLoginFail);
 		T_CHECK_FAIL = context.getString(R.string.tCheckFail);
+		T_LOGIN_VALIDATE_FAIL = context.getString(R.string.tLoginValidateFail);
 	}
 
 	private void initClient() {
@@ -195,6 +196,8 @@ public class CheckinHandler {
 						.toString(response.getEntity(), "UTF-8");
 				if (res.contains("会员登录")) {
 					acc.state = LOGIN_FAIL;
+				} else if (res.contains("请输入验证码")) {
+					acc.state = LOGIN_VALIDATE_FAIL;
 				} else if (res.contains("快捷操作")) {
 					acc = isCheck(acc);
 					if (acc.day > 0)
