@@ -195,9 +195,11 @@ public class CheckinHandler {
 				String res = EntityUtils
 						.toString(response.getEntity(), "UTF-8");
 				if (res.contains("会员登录")) {
-					acc.state = LOGIN_FAIL;
-				} else if (res.contains("请输入验证码")) {
-					acc.state = LOGIN_VALIDATE_FAIL;
+					if (res.contains("请输入验证码")) {
+						acc.state = LOGIN_VALIDATE_FAIL;
+					} else {
+						acc.state = LOGIN_FAIL;
+					}
 				} else if (res.contains("快捷操作")) {
 					acc = isCheck(acc);
 					if (acc.day > 0)
