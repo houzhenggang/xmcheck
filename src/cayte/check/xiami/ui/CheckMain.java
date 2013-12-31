@@ -72,8 +72,7 @@ public class CheckMain {
 	public void onCreate() {
 		// ad
 		if (!act.spf.isRemoveAd()) {
-			// show ad
-			showSmartBanner();
+			SmartBannerManager.init(act);
 		}
 
 		setTextStyle();
@@ -86,6 +85,10 @@ public class CheckMain {
 				// TODO Auto-generated method stub
 				if (isCheckTaskRun())
 					return;
+				// ad
+				if (!act.spf.isRemoveAd()) {
+					SmartBannerManager.show(act);
+				}
 				AccountInfo[] arr = act.db.queryArray();
 				if (arr.length > 0)
 					doCheckTask(arr);
@@ -470,8 +473,4 @@ public class CheckMain {
 		// tran.setBackgroundColor(Color.argb((int) (f * 178.5f), 0, 0, 0));
 	}
 
-	private void showSmartBanner() {
-		SmartBannerManager.init(act);
-		SmartBannerManager.show(act);
-	}
 }
